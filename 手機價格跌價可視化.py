@@ -10,9 +10,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # 讀取 Excel 文件
+b=input('請輸入日期(YYYY-MM-DD):')
 a=input('輸入跌價排名:')
 
-df = pd.read_excel('手機價格.xlsx', sheet_name='2023-02-15') #選擇目標檔案、工作業
+df = pd.read_excel('手機價格.xlsx', sheet_name=b) #選擇目標檔案、工作業
 df['漲跌'] = df['漲跌'].replace('%', '', regex=True).astype(float) / 100 #文字轉換成數字
 
 df = df.sort_values(by='漲跌')#選擇列
